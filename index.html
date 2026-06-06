@@ -621,12 +621,12 @@
             
             <nav>
                 <ul class="nav-list" id="sidebarNavList">
-                    <li class="nav-item active" data-target="cover" draggable="true" ondragstart="handleDragStart(event)" ondragover="handleDragOver(event)" ondrop="handleDrop(event)" ondragend="handleDragEnd(event)"><a href="#cover"><span contenteditable="true">Capa do Relatório</span></a></li>
-                    <li class="nav-item" data-target="visao-geral" draggable="true" ondragstart="handleDragStart(event)" ondragover="handleDragOver(event)" ondrop="handleDrop(event)" ondragend="handleDragEnd(event)"><a href="#visao-geral"><span contenteditable="true">Visão Geral</span></a></li>
-                    <li class="nav-item" data-target="palavras-chaves" draggable="true" ondragstart="handleDragStart(event)" ondragover="handleDragOver(event)" ondrop="handleDrop(event)" ondragend="handleDragEnd(event)"><a href="#palavras-chaves"><span contenteditable="true">Palavras-Chaves</span></a></li>
-                    <li class="nav-item" data-target="resultados-google" draggable="true" ondragstart="handleDragStart(event)" ondragover="handleDragOver(event)" ondrop="handleDrop(event)" ondragend="handleDragEnd(event)"><a href="#resultados-google"><span contenteditable="true">Resultados da Campanha</span></a></li>
-                    <li class="nav-item" data-target="mais-informacoes" draggable="true" ondragstart="handleDragStart(event)" ondragover="handleDragOver(event)" ondrop="handleDrop(event)" ondragend="handleDragEnd(event)"><a href="#mais-informacoes"><span contenteditable="true">Mais Informações</span></a></li>
-                    <li class="nav-item" data-target="finalizacao" draggable="true" ondragstart="handleDragStart(event)" ondragover="handleDragOver(event)" ondrop="handleDrop(event)" ondragend="handleDragEnd(event)"><a href="#finalizacao"><span contenteditable="true">Agradecimento</span></a></li>
+                    <li class="nav-item active" data-target="cover" draggable="true" ondragstart="handleDragStart(event)" ondragover="handleDragOver(event)" ondrop="handleDrop(event)" ondragend="handleDragEnd(event)"><a href="#cover"><span>Capa do Relatório</span></a></li>
+                    <li class="nav-item" data-target="visao-geral" draggable="true" ondragstart="handleDragStart(event)" ondragover="handleDragOver(event)" ondrop="handleDrop(event)" ondragend="handleDragEnd(event)"><a href="#visao-geral"><span>Visão Geral</span></a></li>
+                    <li class="nav-item" data-target="palavras-chaves" draggable="true" ondragstart="handleDragStart(event)" ondragover="handleDragOver(event)" ondrop="handleDrop(event)" ondragend="handleDragEnd(event)"><a href="#palavras-chaves"><span>Palavras-Chaves</span></a></li>
+                    <li class="nav-item" data-target="resultados-google" draggable="true" ondragstart="handleDragStart(event)" ondragover="handleDragOver(event)" ondrop="handleDrop(event)" ondragend="handleDragEnd(event)"><a href="#resultados-google"><span>Resultados da Campanha</span></a></li>
+                    <li class="nav-item" data-target="mais-informacoes" draggable="true" ondragstart="handleDragStart(event)" ondragover="handleDragOver(event)" ondrop="handleDrop(event)" ondragend="handleDragEnd(event)"><a href="#mais-informacoes"><span>Mais Informações</span></a></li>
+                    <li class="nav-item" data-target="finalizacao" draggable="true" ondragstart="handleDragStart(event)" ondragover="handleDragOver(event)" ondrop="handleDrop(event)" ondragend="handleDragEnd(event)"><a href="#finalizacao"><span>Agradecimento</span></a></li>
                 </ul>
             </nav>
         </div>
@@ -834,12 +834,6 @@
     // Navigation routing logic
     document.querySelectorAll('.nav-item').forEach(item => {
         item.addEventListener('click', function(e) {
-            // Block navigation ONLY if the user is already actively editing this element
-            const activeEdit = document.activeElement;
-            if (activeEdit && (activeEdit.hasAttribute('contenteditable') || activeEdit.closest('[contenteditable="true"]')) && (e.target === activeEdit || activeEdit.contains(e.target))) {
-                return;
-            }
-            
             e.preventDefault();
             document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
             this.classList.add('active');
