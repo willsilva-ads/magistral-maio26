@@ -522,6 +522,126 @@
             gap: 0.5rem;
         }
 
+        /* Tables styling */
+        .table-container {
+            width: 100%;
+            overflow-x: auto;
+            margin-top: 1rem;
+        }
+
+        .premium-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 0.875rem;
+            color: var(--text-main);
+        }
+
+        .premium-table th {
+            padding: 1.25rem 1rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            font-size: 0.725rem;
+            letter-spacing: 0.75px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            font-family: 'Outfit', sans-serif;
+            text-align: right;
+        }
+
+        .premium-table th:first-child {
+            text-align: left;
+            width: 32%;
+        }
+
+        .premium-table th:nth-child(2) {
+            text-align: center;
+            width: 10%;
+        }
+
+        .premium-table td {
+            padding: 1.2rem 1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+            color: var(--text-main);
+            white-space: nowrap;
+            text-align: right;
+        }
+
+        .premium-table td:first-child {
+            text-align: left;
+            font-weight: 500;
+            color: #fff;
+        }
+
+        .premium-table td:nth-child(2) {
+            text-align: center;
+        }
+
+        .premium-table tbody tr:hover {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .premium-table tr.total-row {
+            background: rgba(255, 255, 255, 0.02);
+            font-weight: 700;
+        }
+
+        .premium-table tr.total-row td {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            color: #fff;
+        }
+
+        /* Status & Metric Pill Badges (Image Style) */
+        .status-pill {
+            border-radius: 4px;
+            padding: 4px 10px;
+            font-weight: 700;
+            font-size: 0.725rem;
+            text-transform: uppercase;
+            display: inline-block;
+            letter-spacing: 0.5px;
+        }
+        .status-pill.active {
+            background: rgba(52, 168, 83, 0.15);
+            color: #2ecc71;
+            border: 1px solid rgba(52, 168, 83, 0.2);
+        }
+        .status-pill.inactive {
+            background: rgba(255, 152, 0, 0.15);
+            color: #e67e22;
+            border: 1px solid rgba(255, 152, 0, 0.2);
+        }
+        .metric-badge {
+            border: 1px solid transparent;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 0.825rem;
+            display: inline-block;
+            font-family: 'Outfit', sans-serif;
+        }
+        .metric-badge.green {
+            border-color: #2ecc71;
+            color: #2ecc71;
+            background: rgba(46, 204, 113, 0.05);
+        }
+        .metric-badge.yellow {
+            border-color: #f1c40f;
+            color: #f1c40f;
+            background: rgba(241, 196, 15, 0.05);
+        }
+        .metric-badge.orange {
+            border-color: #e67e22;
+            color: #e67e22;
+            background: rgba(230, 126, 34, 0.05);
+        }
+        .metric-badge.red {
+            border-color: #e74c3c;
+            color: #e74c3c;
+            background: rgba(231, 76, 60, 0.05);
+        }
+
         /* Responsividade Mobile */
         @media (max-width: 768px) {
             .app-container {
@@ -623,8 +743,10 @@
                 <ul class="nav-list" id="sidebarNavList">
                     <li class="nav-item active" data-target="cover" draggable="true" ondragstart="handleDragStart(event)" ondragover="handleDragOver(event)" ondrop="handleDrop(event)" ondragend="handleDragEnd(event)"><a href="#cover"><span>Capa do Relatório</span></a></li>
                     <li class="nav-item" data-target="visao-geral" draggable="true" ondragstart="handleDragStart(event)" ondragover="handleDragOver(event)" ondrop="handleDrop(event)" ondragend="handleDragEnd(event)"><a href="#visao-geral"><span>Visão Geral</span></a></li>
+                    <li class="nav-item" data-target="meta-ads" draggable="true" ondragstart="handleDragStart(event)" ondragover="handleDragOver(event)" ondrop="handleDrop(event)" ondragend="handleDragEnd(event)"><a href="#meta-ads"><span>Meta Ads</span></a></li>
+                    <li class="nav-item" data-target="resultados-google" draggable="true" ondragstart="handleDragStart(event)" ondragover="handleDragOver(event)" ondrop="handleDrop(event)" ondragend="handleDragEnd(event)"><a href="#resultados-google"><span>Google Ads</span></a></li>
                     <li class="nav-item" data-target="palavras-chaves" draggable="true" ondragstart="handleDragStart(event)" ondragover="handleDragOver(event)" ondrop="handleDrop(event)" ondragend="handleDragEnd(event)"><a href="#palavras-chaves"><span>Palavras-Chaves</span></a></li>
-                    <li class="nav-item" data-target="resultados-google" draggable="true" ondragstart="handleDragStart(event)" ondragover="handleDragOver(event)" ondrop="handleDrop(event)" ondragend="handleDragEnd(event)"><a href="#resultados-google"><span>Resultados da Campanha</span></a></li>
+                    <li class="nav-item" data-target="investimentos" draggable="true" ondragstart="handleDragStart(event)" ondragover="handleDragOver(event)" ondrop="handleDrop(event)" ondragend="handleDragEnd(event)"><a href="#investimentos"><span>Investimento Total</span></a></li>
                     <li class="nav-item" data-target="mais-informacoes" draggable="true" ondragstart="handleDragStart(event)" ondragover="handleDragOver(event)" ondrop="handleDrop(event)" ondragend="handleDragEnd(event)"><a href="#mais-informacoes"><span>Mais Informações</span></a></li>
                     <li class="nav-item" data-target="finalizacao" draggable="true" ondragstart="handleDragStart(event)" ondragover="handleDragOver(event)" ondrop="handleDrop(event)" ondragend="handleDragEnd(event)"><a href="#finalizacao"><span>Agradecimento</span></a></li>
                 </ul>
@@ -681,56 +803,131 @@
         <section id="visao-geral" class="section-block">
             <div class="dash-header">
                 <div>
-                    <h2 contenteditable="true">Google Ads</h2>
-                    <p contenteditable="true">Conversão de Leads - Maio 2026</p>
+                    <h2 contenteditable="true">Visão Geral das Campanhas</h2>
+                    <p contenteditable="true">Objetivos e estratégias de tráfego pago - Maio 2026</p>
                 </div>
             </div>
 
             <div class="glass-card">
                 <div class="strategy-container">
-                    <div class="strategy-block">
-                        <h4 contenteditable="true">Objetivo</h4>
-                        <p contenteditable="true">Gerar conversões de leads para chamadas a partir de anúncios.</p>
+                    <div class="strategy-block" style="border-left: 3px solid var(--google-color);">
+                        <h4 style="color: var(--google-color);" contenteditable="true">Google Ads - Conversão de Leads</h4>
+                        <p contenteditable="true"><strong>Objetivo:</strong> Gerar conversões de leads para chamadas a partir de anúncios.<br><strong>Estratégia:</strong> Campanha de Rede de Pesquisa direcionada para geração de chamadas telefônicas para a Magistral.</p>
                     </div>
-                    <div class="strategy-block">
-                        <h4 contenteditable="true">Estratégia</h4>
-                        <p contenteditable="true">Utilizamos uma campanha de Rede de Pesquisa, com objetivo de gerar chamadas telefônicas para a Magistral.</p>
+                    <div class="strategy-block" style="border-left: 3px solid var(--meta-color);">
+                        <h4 style="color: var(--meta-color);" contenteditable="true">Meta Ads - Mensagens WhatsApp</h4>
+                        <p contenteditable="true"><strong>Objetivo:</strong> Gerar conversas iniciadas no WhatsApp comercial.<br><strong>Estratégia:</strong> Campanhas focadas em mensagens para vendas e atendimento da farmácia de manipulação.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- PALAVRAS CHAVES SECTION -->
-        <section id="palavras-chaves" class="section-block">
+        <!-- META ADS SECTION -->
+        <section id="meta-ads" class="section-block">
             <div class="dash-header">
                 <div>
-                    <h2 contenteditable="true">Palavras-Chaves</h2>
-                    <p contenteditable="true">Termos de busca de alta relevância que ativaram nossos anúncios</p>
+                    <h2 contenteditable="true">Meta Ads (Facebook & Instagram)</h2>
+                    <p contenteditable="true">Detalhamento dos resultados das campanhas de anúncios</p>
                 </div>
             </div>
 
             <div class="glass-card">
-                <div class="card-header">
-                    <div class="card-title" contenteditable="true">
-                        <div class="card-title-icon" style="background: var(--google-color)"></div>
-                        Lista de Palavras-Chaves Configuradas
+                <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 2rem;">
+                    <span style="display: inline-block; width: 4px; height: 24px; background-color: var(--meta-color); border-radius: 2px;"></span>
+                    <h3 style="font-family: 'Outfit'; font-size: 1.25rem; font-weight: 600; color: #fff;" contenteditable="true">Conta 01 - Magistral Farma (Mensagens WhatsApp)</h3>
+                </div>
+
+                <div class="kpi-grid" style="margin-bottom: 2.5rem;">
+                    <div class="kpi-card" style="--accent: #1877F2">
+                        <div class="kpi-label" contenteditable="true">Investimento</div>
+                        <div class="kpi-value" contenteditable="true">R$ 734,96</div>
+                    </div>
+                    <div class="kpi-card" style="--accent: #34a853">
+                        <div class="kpi-label" contenteditable="true">Conversas Iniciadas</div>
+                        <div class="kpi-value" contenteditable="true">138</div>
+                    </div>
+                    <div class="kpi-card" style="--accent: #ff9800">
+                        <div class="kpi-label" contenteditable="true">Custo por Conversa</div>
+                        <div class="kpi-value" contenteditable="true">R$ 5,33</div>
+                    </div>
+                    <div class="kpi-card" style="--accent: #1877F2">
+                        <div class="kpi-label" contenteditable="true">Cliques no Link</div>
+                        <div class="kpi-value" contenteditable="true">260</div>
                     </div>
                 </div>
-                <div class="keywords-grid">
-                    <div class="keyword-tag" contenteditable="true"><span class="keyword-bullet"></span>farmacia</div>
-                    <div class="keyword-tag" contenteditable="true"><span class="keyword-bullet"></span>Farmácia de Manipulação</div>
-                    <div class="keyword-tag" contenteditable="true"><span class="keyword-bullet"></span>farmacia de manipulação</div>
-                    <div class="keyword-tag" contenteditable="true"><span class="keyword-bullet"></span>Farmácia</div>
-                    <div class="keyword-tag" contenteditable="true"><span class="keyword-bullet"></span>farmacia manipulação</div>
-                    <div class="keyword-tag" contenteditable="true"><span class="keyword-bullet"></span>farmacia delivery</div>
-                    <div class="keyword-tag" contenteditable="true"><span class="keyword-bullet"></span>farmacia manipulacao</div>
-                    <div class="keyword-tag" contenteditable="true"><span class="keyword-bullet"></span>farmacia perto de mim</div>
-                    <div class="keyword-tag" contenteditable="true"><span class="keyword-bullet"></span>número de farmácia</div>
+
+                <div style="display: flex; align-items: center; gap: 0.75rem; margin-top: 2rem; margin-bottom: 1.5rem;">
+                    <span style="display: inline-block; width: 4px; height: 20px; background-color: #ff0050; border-radius: 2px;"></span>
+                    <h4 style="font-family: 'Outfit'; font-size: 1.1rem; font-weight: 600; color: #fff;" contenteditable="true">Tabela de Campanhas - Meta Ads</h4>
+                </div>
+
+                <div class="table-container">
+                    <table class="premium-table">
+                        <thead>
+                            <tr>
+                                <th contenteditable="true">Nome da Campanha</th>
+                                <th contenteditable="true">Status</th>
+                                <th contenteditable="true">Mensagens</th>
+                                <th contenteditable="true">Cliques</th>
+                                <th contenteditable="true">Impressões</th>
+                                <th contenteditable="true">CTR</th>
+                                <th contenteditable="true">Custo/Lead</th>
+                                <th contenteditable="true">Custo/Clique</th>
+                                <th contenteditable="true">Investimento</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td contenteditable="true" style="font-weight: 500; color: #fff; white-space: normal;">[MM] [MENSAGENS] [WHATSAPP]</td>
+                                <td contenteditable="true"><span class="status-pill inactive">Pausada</span></td>
+                                <td contenteditable="true">74</td>
+                                <td contenteditable="true">96</td>
+                                <td contenteditable="true">6.733</td>
+                                <td contenteditable="true">1,10%</td>
+                                <td contenteditable="true"><span class="metric-badge green">R$ 0,45</span></td>
+                                <td contenteditable="true">R$ 0,45</td>
+                                <td contenteditable="true">R$ 33,02</td>
+                            </tr>
+                            <tr>
+                                <td contenteditable="true" style="font-weight: 500; color: #fff; white-space: normal;">[MM] [MENSAGENS] [WHATSAPP] [V2]</td>
+                                <td contenteditable="true"><span class="status-pill active">Ativa</span></td>
+                                <td contenteditable="true">63</td>
+                                <td contenteditable="true">443</td>
+                                <td contenteditable="true">39.524</td>
+                                <td contenteditable="true">0,47%</td>
+                                <td contenteditable="true"><span class="metric-badge yellow">R$ 10,56</span></td>
+                                <td contenteditable="true">R$ 3,62</td>
+                                <td contenteditable="true">R$ 665,27</td>
+                            </tr>
+                            <tr>
+                                <td contenteditable="true" style="font-weight: 500; color: #fff; white-space: normal;">[MM] [MENSAGENS] [WHATSAPP] [V2] [VERISOL]</td>
+                                <td contenteditable="true"><span class="status-pill inactive">Pausada</span></td>
+                                <td contenteditable="true">1</td>
+                                <td contenteditable="true">23</td>
+                                <td contenteditable="true">1.681</td>
+                                <td contenteditable="true">0,12%</td>
+                                <td contenteditable="true"><span class="metric-badge orange">R$ 36,67</span></td>
+                                <td contenteditable="true">R$ 18,34</td>
+                                <td contenteditable="true">R$ 36,67</td>
+                            </tr>
+                            <tr class="total-row">
+                                <td contenteditable="true">META ADS TOTAL</td>
+                                <td contenteditable="true">Conta Geral</td>
+                                <td contenteditable="true">138</td>
+                                <td contenteditable="true">562</td>
+                                <td contenteditable="true">47.938</td>
+                                <td contenteditable="true">0,54%</td>
+                                <td contenteditable="true"><span class="metric-badge yellow">R$ 5,33</span></td>
+                                <td contenteditable="true">R$ 2,83</td>
+                                <td contenteditable="true">R$ 734,96</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </section>
 
-        <!-- RESULTADOS GOOGLE SECTION -->
+                <!-- RESULTADOS GOOGLE SECTION -->
         <section id="resultados-google" class="section-block">
             <div class="dash-header">
                 <div>
@@ -773,12 +970,84 @@
             </div>
         </section>
 
+        <!-- PALAVRAS CHAVES SECTION -->
+        <section id="palavras-chaves" class="section-block">
+            <div class="dash-header">
+                <div>
+                    <h2 contenteditable="true">Palavras-Chaves</h2>
+                    <p contenteditable="true">Termos de busca de alta relevância que ativaram nossos anúncios</p>
+                </div>
+            </div>
+
+            <div class="glass-card">
+                <div class="card-header">
+                    <div class="card-title" contenteditable="true">
+                        <div class="card-title-icon" style="background: var(--google-color)"></div>
+                        Lista de Palavras-Chaves Configuradas
+                    </div>
+                </div>
+                <div class="keywords-grid">
+                    <div class="keyword-tag" contenteditable="true"><span class="keyword-bullet"></span>farmacia</div>
+                    <div class="keyword-tag" contenteditable="true"><span class="keyword-bullet"></span>Farmácia de Manipulação</div>
+                    <div class="keyword-tag" contenteditable="true"><span class="keyword-bullet"></span>farmacia de manipulação</div>
+                    <div class="keyword-tag" contenteditable="true"><span class="keyword-bullet"></span>Farmácia</div>
+                    <div class="keyword-tag" contenteditable="true"><span class="keyword-bullet"></span>farmacia manipulação</div>
+                    <div class="keyword-tag" contenteditable="true"><span class="keyword-bullet"></span>farmacia delivery</div>
+                    <div class="keyword-tag" contenteditable="true"><span class="keyword-bullet"></span>farmacia manipulacao</div>
+                    <div class="keyword-tag" contenteditable="true"><span class="keyword-bullet"></span>farmacia perto de mim</div>
+                    <div class="keyword-tag" contenteditable="true"><span class="keyword-bullet"></span>número de farmácia</div>
+                </div>
+            </div>
+        </section>
+
+<!-- INVESTIMENTOS SECTION -->
+        <section id="investimentos" class="section-block">
+            <div class="dash-header">
+                <div>
+                    <h2 contenteditable="true">Investimento Total</h2>
+                    <p contenteditable="true">Consolidado Blended de Mídia e Conversão - Maio 2026</p>
+                </div>
+            </div>
+
+            <div class="glass-card">
+                <div class="card-header">
+                    <div class="card-title" contenteditable="true">
+                        <div class="card-title-icon" style="background: var(--accent)"></div>
+                        Distribuição do Orçamento e Resultados Blended
+                    </div>
+                </div>
+                
+                <div class="kpi-grid">
+                    <div class="kpi-card" style="--accent: var(--google-color)">
+                        <div class="kpi-label" contenteditable="true">Google Ads</div>
+                        <div class="kpi-value" contenteditable="true">R$ 156,50</div>
+                        <div class="kpi-subtext" contenteditable="true">4 leads (Ligações) • CPA: R$ 39,13</div>
+                    </div>
+                    <div class="kpi-card" style="--accent: var(--meta-color)">
+                        <div class="kpi-label" contenteditable="true">Meta Ads</div>
+                        <div class="kpi-value" contenteditable="true">R$ 734,96</div>
+                        <div class="kpi-subtext" contenteditable="true">138 leads (Conversas) • CPA: R$ 5,33</div>
+                    </div>
+                    <div class="kpi-card" style="--accent: var(--accent)">
+                        <div class="kpi-label" contenteditable="true">Total Investido</div>
+                        <div class="kpi-value" contenteditable="true">R$ 891,46</div>
+                        <div class="kpi-subtext" contenteditable="true">Orçamento Blended Consumido</div>
+                    </div>
+                    <div class="kpi-card" style="--accent: var(--accent)">
+                        <div class="kpi-label" contenteditable="true">Leads Totais (Blended)</div>
+                        <div class="kpi-value" contenteditable="true">142</div>
+                        <div class="kpi-subtext" contenteditable="true">Ligações + Conversas • CPA Médio: R$ 6,28</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- MAIS INFORMACOES SECTION -->
         <section id="mais-informacoes" class="section-block">
             <div class="dash-header">
                 <div>
                     <h2 contenteditable="true">Mais Informações</h2>
-                    <p contenteditable="true">Análise estratégica de performance da campanha da Magistral</p>
+                    <p contenteditable="true">Análise estratégica de performance das campanhas da Magistral</p>
                 </div>
             </div>
 
@@ -786,10 +1055,20 @@
                 <div style="margin-bottom: 2rem;">
                     <h3 style="font-family: 'Outfit'; font-size: 1.3rem; margin-bottom: 0.75rem; color: var(--google-color); display: flex; align-items: center; gap: 0.5rem;" contenteditable="true">
                         <span style="display:inline-block; width:10px; height:10px; border-radius:50%; background:var(--google-color);"></span>
-                        Resumo da Performance
+                        Google Ads
                     </h3>
                     <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;" contenteditable="true">
                         A campanha teve início no dia 25/05 e apresentou resultados positivos imediatos. Com um investimento de R$ 156,50, geramos 465 impressões, 61 cliques e 04 conversões em ligações telefônicas. O desempenho confirma a grande efetividade das palavras-chave selecionadas, especialmente o termo "Farmácia de Manipulação", responsável por 75% das conversões.
+                    </p>
+                </div>
+
+                <div style="margin-bottom: 2rem; border-top: 1px solid var(--border-card); padding-top: 1.5rem;">
+                    <h3 style="font-family: 'Outfit'; font-size: 1.3rem; margin-bottom: 0.75rem; color: var(--meta-color); display: flex; align-items: center; gap: 0.5rem;" contenteditable="true">
+                        <span style="display:inline-block; width:10px; height:10px; border-radius:50%; background:var(--meta-color);"></span>
+                        Meta Ads
+                    </h3>
+                    <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;" contenteditable="true">
+                        As campanhas de Meta Ads focadas em captação de mensagens de WhatsApp geraram um total de 138 conversas com investimento de R$ 734,96. A campanha ativa "[MM] [MENSAGENS] [WHATSAPP] [V2]" obteve 63 conversas iniciadas com custo por resultado de R$ 10,56. A campanha "[MM] [MENSAGENS] [WHATSAPP]" (inativa) teve excelente custo por resultado de R$ 0,45, acumulando 74 conversas iniciadas.
                     </p>
                 </div>
             </div>
