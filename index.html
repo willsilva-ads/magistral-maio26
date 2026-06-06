@@ -667,7 +667,8 @@
                 flex-direction: row;
                 flex-wrap: wrap;
                 justify-content: center;
-                gap: 0.5rem;
+                gap: 0.6rem 0.4rem;
+                width: 100%;
             }
             .nav-item {
                 width: auto;
@@ -676,14 +677,21 @@
             }
             .nav-item a {
                 padding: 0.6rem 0.85rem; /* Larger touch targets */
-                font-size: 0.875rem;
+                font-size: 0.85rem;
+                color: var(--text-muted);
+                background: rgba(255, 255, 255, 0.02);
+                border: 1px solid rgba(255, 255, 255, 0.05);
+                border-radius: 6px;
+                text-align: center;
                 -webkit-tap-highlight-color: transparent; /* Remove tap flash on Safari/Chrome */
             }
             .nav-item.active a, .nav-item a:hover {
-                border-left: none;
-                border-bottom: 2px solid var(--accent);
+                color: #fff;
+                background: rgba(124, 58, 237, 0.15);
+                border: 1px solid var(--accent);
+                border-bottom: 3px solid var(--accent);
                 padding-left: 0.85rem;
-                padding-bottom: calc(0.6rem - 2px);
+                padding-bottom: calc(0.6rem - 1px);
             }
             .main-content {
                 padding: 1.5rem;
@@ -725,8 +733,8 @@
                 gap: 1rem;
             }
             .kpi-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: 1rem;
+                grid-template-columns: 1fr;
+                gap: 1.25rem;
             }
             .fullscreen-btn {
                 display: none;
