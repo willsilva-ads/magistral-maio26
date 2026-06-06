@@ -33,6 +33,10 @@
             color: var(--text-main);
             overflow-x: hidden;
             line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+            -webkit-text-size-adjust: 100%;
         }
 
         /* App Layout Grid */
@@ -527,6 +531,7 @@
             width: 100%;
             overflow-x: auto;
             margin-top: 1rem;
+            -webkit-overflow-scrolling: touch; /* Momentum scrolling iOS */
         }
 
         .premium-table {
@@ -651,6 +656,7 @@
                 position: relative;
                 height: auto;
                 padding: 1.5rem;
+                padding-top: calc(env(safe-area-inset-top, 0px) + 1.5rem); /* notched iPhones safe area */
                 border-right: none;
                 border-bottom: 1px solid var(--border-card);
             }
@@ -666,19 +672,23 @@
             }
             .nav-item {
                 width: auto;
+                -webkit-user-select: none;
+                user-select: none;
             }
             .nav-item a {
-                padding: 0.5rem 0.75rem;
-                font-size: 0.85rem;
+                padding: 0.6rem 0.85rem; /* Larger touch targets */
+                font-size: 0.875rem;
+                -webkit-tap-highlight-color: transparent; /* Remove tap flash on Safari/Chrome */
             }
             .nav-item.active a, .nav-item a:hover {
                 border-left: none;
                 border-bottom: 2px solid var(--accent);
-                padding-left: 0.75rem;
-                padding-bottom: calc(0.5rem - 2px);
+                padding-left: 0.85rem;
+                padding-bottom: calc(0.6rem - 2px);
             }
             .main-content {
                 padding: 1.5rem;
+                padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 2rem);
             }
             .cover-content {
                 grid-template-columns: 1fr;
@@ -694,6 +704,11 @@
             }
             .closing-footer-layout {
                 justify-content: center;
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+            .closing-divider {
+                display: none; /* Hide vertical separator on small screens to let blocks stack nicely */
             }
             .cover-right {
                 order: -1;
@@ -712,6 +727,7 @@
             }
             .kpi-grid {
                 grid-template-columns: 1fr 1fr;
+                gap: 1rem;
             }
             .fullscreen-btn {
                 display: none;
@@ -724,6 +740,11 @@
         @media (max-width: 480px) {
             .kpi-grid {
                 grid-template-columns: 1fr;
+            }
+            .closing-footer-layout {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
             }
         }
     </style>
