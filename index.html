@@ -696,6 +696,8 @@
             .main-content {
                 padding: 1.5rem;
                 padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 2rem);
+                overflow-x: hidden;
+                width: 100%;
             }
             .cover-content {
                 grid-template-columns: 1fr;
@@ -733,8 +735,8 @@
                 gap: 1rem;
             }
             .kpi-grid {
-                grid-template-columns: 1fr;
-                gap: 1.25rem;
+                grid-template-columns: 1fr 1fr;
+                gap: 1rem;
             }
             .fullscreen-btn {
                 display: none;
